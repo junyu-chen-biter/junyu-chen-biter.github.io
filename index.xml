@@ -7,6 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Marquez</copyright>
+<<<<<<< HEAD
         <lastBuildDate>Sun, 06 Jul 2025 16:14:48 +0800</lastBuildDate><atom:link href="https://junyu-chen-biter.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>网站搭建说明</title>
         <link>https://junyu-chen-biter.github.io/p/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</link>
@@ -55,6 +56,9 @@ social是侧边栏的搜索，可以自己改&lt;/p&gt;&lt;/blockquote&gt;
 </description>
         </item>
         <item>
+=======
+        <lastBuildDate>Sun, 06 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://junyu-chen-biter.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+>>>>>>> df8db158d30b85fa76c357c8d51d3b08f468f00e
         <title>大一踩坑指南</title>
         <link>https://junyu-chen-biter.github.io/p/%E5%A4%A7%E4%B8%80%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97/</link>
         <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
