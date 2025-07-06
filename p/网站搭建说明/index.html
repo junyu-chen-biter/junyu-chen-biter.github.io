@@ -9,11 +9,7 @@
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="网站搭建说明">
 <meta property='og:description' content="关于yaml的配置 这个文件可以修改网站的一些配置\ncopyright就是人的名字\n语言里面的title是我的名字\ncustomText是自定义文本\nenabled是评论，我其实先关掉了\nwidgets是装饰，可以自己选择关不关\nsocial是侧边栏的搜索，可以自己改\n">
 <meta property='og:url' content='https://junyu-chen-biter.github.io/p/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/'>
-<<<<<<< HEAD
 <meta property='og:site_name' content='Marquez'>
-=======
-<meta property='og:site_name' content='Marquez Chen'>
->>>>>>> df8db158d30b85fa76c357c8d51d3b08f468f00e
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-06T16:14:48&#43;08:00'/><meta property='article:modified_time' content='2025-07-06T16:14:48&#43;08:00'/>
 <meta name="twitter:title" content="网站搭建说明">
 <meta name="twitter:description" content="关于yaml的配置 这个文件可以修改网站的一些配置\ncopyright就是人的名字\n语言里面的title是我的名字\ncustomText是自定义文本\nenabled是评论，我其实先关掉了\nwidgets是装饰，可以自己选择关不关\nsocial是侧边栏的搜索，可以自己改\n">
@@ -73,11 +69,7 @@
         
         
         <div class="site-meta">
-<<<<<<< HEAD
             <h1 class="site-name"><a href="/">Marquez</a></h1>
-=======
-            <h1 class="site-name"><a href="/">Marquez Chen</a></h1>
->>>>>>> df8db158d30b85fa76c357c8d51d3b08f468f00e
             <h2 class="site-description">水到渠成</h2>
         </div>
     </header><ol class="menu-social">
@@ -369,6 +361,7 @@ social是侧边栏的搜索，可以自己改</p></blockquote>
 <p>这样来创建内容</p>
 <p>在themes的stack里面有个样例，那里面可以有一些样例文件，可以查看
 还有title是在文件里面直接改的</p>
+<p>还有，如果要在同一文件下引用图片，md文件的名字只能命名为index</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -391,8 +384,9 @@ social是侧边栏的搜索，可以自己改</p></blockquote>
 </span></span><span class="line"><span class="cl">    - 测试
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这上面就是样例可以改的地方，其中categories的地方就是旁边的标签，img是封面
-不过如果是手动部署的话，每一次写完以后，还要把public文件删掉，用hugo -D重新生成文件，给github上上床public文件</p>
+</div><p>这上面就是样例可以改的地方，其中categories的地方就是旁边的标签，img是封面</p>
+<p>不过如果是手动部署的话，每一次写完以后，用hugo -D重新生成文件，给github上上床public文件，这个方法明显不是最好的，而且教程的git init使用在了public里面，所以大概率以后要大改这个网站了
+这个方法中。draft的状态还会影响是否显示，乐了</p>
 
 </section>
 
