@@ -385,8 +385,15 @@ social是侧边栏的搜索，可以自己改</p></blockquote>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>这上面就是样例可以改的地方，其中categories的地方就是旁边的标签，img是封面</p>
-<p>不过如果是手动部署的话，每一次写完以后，用hugo -D重新生成文件，给github上上床public文件，这个方法明显不是最好的，而且教程的git init使用在了public里面，所以大概率以后要大改这个网站了
-这个方法中。draft的状态还会影响是否显示，乐了</p>
+<p>这个方法中。draft的状态还会影响是否显示，乐了</p>
+<hr>
+<p>目前网站还是手动部署，每一次写完以后，用hugo -D（在dev目录下）重新生成文件，之后进入public文件，</p>
+<blockquote>
+<p>git add .
+git commit -m &ldquo;更新xx年xx日&rdquo;
+git push origin master</p></blockquote>
+<p>然后在github上pull resquest，合并更新<br>
+这个方法非常愚蠢，不是很好，因为有几次失误的操作导致我的main分支不知道去哪了（）</p>
 
 </section>
 
