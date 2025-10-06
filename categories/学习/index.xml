@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Marquez</title>
-        <link>http://localhost:1313/</link>
-        <description>Recent content on Marquez</description>
+        <title>学习 on Marquez</title>
+        <link>http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0/</link>
+        <description>Recent content in 学习 on Marquez</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Marquez</copyright>
-        <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>kaggle学习笔记</title>
         <link>http://localhost:1313/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
@@ -40,7 +40,7 @@
 &lt;p&gt;二元交叉熵函数，使用的时候必须用sigmoid激活函数，用于二分问题&lt;/p&gt;
 &lt;div style=&#34;height: 25px;&#34;&gt;&lt;/div&gt;
 &lt;blockquote&gt;
-&lt;p&gt;nn.CrossEntropyLoss()&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;nn.nn.CrossEntropyLoss()&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;交叉熵函数，用于多分类问题&lt;/p&gt;
 &lt;h2 id=&#34;以李沐的房价为例的分析&#34;&gt;以李沐的房价为例的分析
 &lt;/h2&gt;&lt;p&gt;首先明确几个点，这些问题是因为这个代码的特殊性而没有遇到的&lt;/p&gt;
@@ -48,8 +48,8 @@
 &lt;p&gt;房价预测是一个回归问题，回归问题套用这个模板是没啥问题的&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;李沐的模型中没有引用dropout等模块，所以测试时没有开启评估模式和禁止梯度&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;数据处理&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;train数据是一个由字符类型和数值类型两种量的数据，每一行代表和一个数据&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;数据处理&lt;/strong&gt;
+train数据是一个由字符类型和数值类型两种量的数据，每一行代表和一个数据&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;先pd.read_csv(path),一般train和test都要read出来&lt;/li&gt;
 &lt;li&gt;然后concat函数，合并test与train，这个时候选择性的去除一些无关变量&lt;/li&gt;
@@ -115,8 +115,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;定义一些工具&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;经典的就是李沐的在评估预测效果时，使用的是 log_rmse 函数计算的，&lt;strong&gt;题目要求&lt;/strong&gt;，而这个函数就是自己手写的，包装在一个函数里面，&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;定义一些工具&lt;/strong&gt;
+经典的就是李沐的在评估预测效果时，使用的是 log_rmse 函数计算的，&lt;strong&gt;题目要求&lt;/strong&gt;，而这个函数就是自己手写的，包装在一个函数里面，&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -137,8 +137,8 @@
 &lt;p&gt;而损失函数，则可以直接由torch内置的库来调用
 &lt;code&gt; loss=nn.MSELoss() &lt;/code&gt;
 当然其实不止这一种损失函数，自己看着用就行&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;开始训练&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;李沐将train函数写出来之后内置到了k折交叉验证之中，所以对于初学者来说看起来会十分麻烦。
+&lt;p&gt;&lt;strong&gt;开始训练&lt;/strong&gt;
+李沐将train函数写出来之后内置到了k折交叉验证之中，所以对于初学者来说看起来会十分麻烦。
 同时他直接用了K折交叉验证，无异于加大了初学者的理解难度
 首先解释&lt;strong&gt;get_k_fold_data&lt;/strong&gt;这个函数&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -382,8 +382,8 @@
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;选择一个优化器&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;optimizer=torch.optim.Adam(net.parameters(),lr=learning_rate,weight_decay=weight_decay)&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;建立for循环训练&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;其实如何更新参数的具体过程，已经内置在了torch里面，这里其实是看不见的
+&lt;p&gt;&lt;strong&gt;建立for循环训练&lt;/strong&gt;
+其实如何更新参数的具体过程，已经内置在了torch里面，这里其实是看不见的
 X是特征，y是标签&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre&gt;&lt;code&gt;for epoch in range(num_epochs):
@@ -399,10 +399,10 @@ X是特征，y是标签&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;此函数最后放回的是训练集和测试集的均方根误差，用于衡量这个效果
 同时net也训练好了，优化器自动做好了这些事情&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;k_fold函数&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;解释了上面两个函数之后，k_fold函数就不难了，返回的是k次验证的平均损失值，这里不再讲解&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;train_and_pred函数&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;简称来说，这一步就是在之前已经完成了net的训练之后，再一次传入test_data，然后回放回相应的标签
+&lt;p&gt;&lt;strong&gt;k_fold函数&lt;/strong&gt;
+解释了上面两个函数之后，k_fold函数就不难了，返回的是k次验证的平均损失值，这里不再讲解&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;train_and_pred函数&lt;/strong&gt;
+简称来说，这一步就是在之前已经完成了net的训练之后，再一次传入test_data，然后回放回相应的标签
 但是要注意，这里这个方法是预测出的价值，只用于回归问题，不可以用于分类问题
 &lt;code&gt; preds = net(test_features).detach().numpy() &lt;/code&gt;
 这里detch方法和numpy都直接计吧
@@ -422,222 +422,6 @@ X是特征，y是标签&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>网站搭建说明</title>
-        <link>http://localhost:1313/p/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</link>
-        <pubDate>Sun, 06 Jul 2025 16:14:48 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</guid>
-        <description>&lt;h3 id=&#34;关于yaml的配置&#34;&gt;关于yaml的配置
-&lt;/h3&gt;&lt;p&gt;这个文件可以修改网站的一些配置&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;copyright就是人的名字&lt;br&gt;
-语言里面的title是我的名字&lt;br&gt;
-customText是自定义文本&lt;br&gt;
-enabled是评论，我其实先关掉了&lt;br&gt;
-widgets是装饰，可以自己选择关不关&lt;br&gt;
-social是侧边栏的搜索，可以自己改&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;在cmd中用命令，&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;hugo new content post/博客名/index.md&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;这样来创建内容&lt;/p&gt;
-&lt;p&gt;在themes的stack里面有个样例，那里面可以有一些样例文件，可以查看
-还有title是在文件里面直接改的&lt;/p&gt;
-&lt;p&gt;还有，如果要在同一文件下引用图片，md文件的名字只能命名为index&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;title: Chinese Test
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;description: 这是一个副标题
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;date: 2020-09-09
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;slug: test-chinese
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;image: helena-hertz-wWZzXlDpMog-unsplash.jpg
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;categories:
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - Test
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    - 测试
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;这上面就是样例可以改的地方，其中categories的地方就是旁边的标签，img是封面&lt;/p&gt;
-&lt;p&gt;这个方法中。draft的状态还会影响是否显示，乐了&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;目前网站还是手动部署，每一次写完以后，用hugo -D（在dev目录下）重新生成文件，之后进入public文件，&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;git add .
-git commit -m &amp;ldquo;更新xx年xx日&amp;rdquo;
-git push origin master&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;然后在github上pull resquest，合并更新&lt;br&gt;
-这个方法非常愚蠢，不是很好，因为有几次失误的操作导致我的main分支不知道去哪了（）&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>京西南大一小记</title>
-        <link>http://localhost:1313/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/</link>
-        <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/farm.jpeg" alt="Featured image of post 京西南大一小记" /&gt;&lt;h1 id=&#34;京西南-大一小记&#34;&gt;京西南 大一小记
-&lt;/h1&gt;&lt;p&gt;时间真是太快了，没想到短短一年的时间，大一就结束了，最后取得成绩还行，写此文的时候第二学期的成绩还没出来，所以在第一学期综测rank5%，纯成绩rank10%，第二学期纯纯被淑芬被刺，总rank没出来，但是应该不如上学期（），在这里写一些我踩过的坑，供后人参考，当然其中也有我不切实际的幻想，唉唉等未来再看吧&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;题目名意为：北京西南边的良乡大一小记&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;学习篇&#34;&gt;学习篇
-&lt;/h2&gt;&lt;p&gt;推荐几个网站：&lt;br&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://www.tboxn.com/sites/320.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.tboxn.com/sites/320.html&lt;/a&gt;&lt;br&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://survivesjtu.gitbook.io/survivesjtumanual&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://survivesjtu.gitbook.io/survivesjtumanual&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;数学分析1&#34;&gt;数学分析1
-&lt;/h3&gt;&lt;p&gt;大一上学期最重要的课，十分偏证明。大一的课程很多，而且有军事理论军事技巧，并且24届批分出来之后分差不大，没出现5%比20%高10多分的情况，所以尽量好好学，保障在前25%就不会拉总均分。我在学这个的时候，依然在保留纸质学习，真是一个大坑，&lt;strong&gt;尽早用无纸化学习更好&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;线性代数&#34;&gt;线性代数
-&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;长远来看，这是大一最重要的课&lt;/strong&gt;，然而我炸了，十分不适应老师的讲课风格，去找了一个全英文的网课看，而却完全忽略了课本，最后只考了一个均分，分析下来是计算太差了，&lt;strong&gt;同时不能完全不看课本&lt;/strong&gt;。最后挺好应试的，但是只学到应试那个难度的话，对以后的科研没啥帮助，我就后悔一直以一个应试的态度学这门课，平时也是只做好课后习题。线性代数完全值得你去找不同的课本反复学习多遍，理解其中的原理是最好的。&lt;/p&gt;
-&lt;h3 id=&#34;c语言&#34;&gt;C语言
-&lt;/h3&gt;&lt;p&gt;很看发挥啊，主要就是要提前备考期末会考的那几个算法，递归、链表、字符串、打印图形。其实挺没意思的，这么考最后比的是应试能力，一堆oi算法都没涉及，会导致很多学生平时的努力无法反映在考试中，但是可以借此探索一下自己的编程水平。我其实考寄了，但是老师大捞特捞，最后评分也不差&lt;/p&gt;
-&lt;h3 id=&#34;人工智能and生科&#34;&gt;人工智能and生科
-&lt;/h3&gt;&lt;p&gt;放在一起说明这两个课就是纯纯的背书，平时一点不用听，考前看PPT和资料完全足够。人工智能这个课，虽然吐槽的很多，但是客观上来说确实讲了许多ai的知识，是一个较为广泛的科普&lt;/p&gt;
-&lt;h3 id=&#34;思政and习概and史纲&#34;&gt;思政and习概and史纲
-&lt;/h3&gt;&lt;p&gt;这个主要看老师和平时分，想卷高分平时分一定要拉满！考试的话，思政看小红书的知识点，习概看老师的重点，史纲emmmm看命。&lt;/p&gt;
-&lt;h3 id=&#34;数学分析2&#34;&gt;数学分析2
-&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;真正的淑芬王朝！&lt;/strong&gt;，大一下想要均分高，淑芬二是关键中的关键！！！因为分差极大。我大一下每一科的排名，综合来看是要比大一上好（因为大一上线代寄了），但是淑芬二却让我总排名不如大一上。就是因为大一下的学分少，淑芬占比高而且分差大，其他科目难以拉开分，我74分，均分64，然而随便来一个淑芬上80的佬，就可以给我拉开一大堆均分。大一下的总成绩排名，也是和淑芬高度相关。如果想卷，这个科目甚至可以寒假先开始学&lt;/p&gt;
-&lt;h3 id=&#34;大物1&#34;&gt;大物1
-&lt;/h3&gt;&lt;p&gt;没啥可说的，纯纯老本，我觉得定期复习加上总结一下公式就行了，可以照搬高中的方法，难度不大，但是4学分，还是尽量冲高分&lt;/p&gt;
-&lt;h3 id=&#34;机械制图&#34;&gt;机械制图
-&lt;/h3&gt;&lt;p&gt;纯纯折磨，24届的几位伟大学长给小灯制作了完整的题库，非常有用。这个科目，基本就是看PPT加刷题，平时的作业一定好好做。至于听课，因人而异吧。&lt;/p&gt;
-&lt;h3 id=&#34;智能机电实践&#34;&gt;智能机电实践
-&lt;/h3&gt;&lt;p&gt;队友大于一切，本人幸运地遇见大佬队友，最后97分拿下此课，没啥技巧，祈祷自己遇见好的队友吧。哦哦，这个课程很锻炼ai使用能力，如果愿意深入了解，其实是一个很好的增强自己实践能力的契机，也是一个很好的偏自动化控制算法的入门，态度好是真能学到东西&lt;/p&gt;
-&lt;h3 id=&#34;大学物理实验&#34;&gt;大学物理实验
-&lt;/h3&gt;&lt;p&gt;难评价，给分有点看运气，想要高分，尽量确保自己绪论部分拿满，那是真的自己可以改变的部分&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;课外事物&#34;&gt;课外事物
-&lt;/h2&gt;&lt;h3 id=&#34;大创&#34;&gt;大创
-&lt;/h3&gt;&lt;p&gt;其实可以算参加了两个，但是都不是核心成员，而且成绩也未知。这个东西，想搞的话就去跟老师（然后你就会被国内高校界的挂名包装之风污染灵魂）。很难评，有些大创真的做东西，比赛过程中甚至会产出论文和专利，有的就是纯纯做PPT。所以建议找老师做，老师会提供一些资源。但是很多大创都是把老师的项目套给学生，这就看自己能不能接受了&lt;/p&gt;
-&lt;h3 id=&#34;比赛&#34;&gt;比赛
-&lt;/h3&gt;&lt;p&gt;算法类的唯一算得上成就的是PAT三等奖（好吧，也是水赛），oi类的比赛对于无编程基础的小灯基本可以劝退。含金量高、无挂名可能的背后，也是其很低的收益付出比，非oier想卷计算机还有很多其他赛道可以选择&lt;br&gt;
-建模类无，参加了一个统计建模，了解了大概是个啥流程，之后感觉不感兴趣，就没有坚持。个人觉得含金量一般（包括国赛），没听见在什么地方这个比赛是很必要的&lt;br&gt;
-rm，rc无，我就没参加这些队伍，乐。&lt;/p&gt;
-&lt;h3 id=&#34;学生事物&#34;&gt;学生事物
-&lt;/h3&gt;&lt;p&gt;组织加了个记者团和学生会，社团是辩论社。大一上确实花了些时间在辩论上，最后拿了院级亚军，感觉辩论给人的影响还是正面的，也可以认识许多人，是段不错的经历。学生组织的话也主要是认识了一些朋友，不过我大一下就基本没弄这些了&lt;br&gt;
-班委当的是班长，相比于团支书，我真是十分悠闲的了&lt;/p&gt;
-&lt;h3 id=&#34;实习and科研&#34;&gt;实习and科研
-&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;zero，彻底没开始&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;推荐篇&#34;&gt;推荐篇
-&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uland.taobao.com/sem/tbsearch?_input_charset=utf-8&amp;amp;bc_fl_src=tbsite_T9W2LtnM&amp;amp;channelSrp=bingSomama&amp;amp;clk1=65e85c681f004644224e0a638c614a59&amp;amp;commend=all&amp;amp;ie=utf8&amp;amp;initiative_id=tbindexz_20170306&amp;amp;keyword=%E9%87%91%E6%A6%9C%E9%A2%98%E5%90%8D%E4%B9%8B%E5%90%8E%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%87%BA%E8%B7%AF%E5%88%86%E5%8C%96%E4%B9%8B%E8%B0%9C&amp;amp;localImgKey=&amp;amp;msclkid=abb9410f88591b6a36192965b42e18b5&amp;amp;page=1&amp;amp;preLoadOrigin=https%3A%2F%2Fwww.taobao.com&amp;amp;q=%E9%87%91%E6%A6%9C%E9%A2%98%E5%90%8D%E4%B9%8B%E5%90%8E%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%87%BA%E8%B7%AF%E5%88%86%E5%8C%96%E4%B9%8B%E8%B0%9C&amp;amp;refpid=mm_2898300158_3078300397_115665800437&amp;amp;search_type=item&amp;amp;source=suggest&amp;amp;sourceId=tb.index&amp;amp;spm=tbpc.pc_sem_alimama%2Fa.search_downSideRecommend.d1&amp;amp;ssid=s5-e&amp;amp;suggest=0_1&amp;amp;suggest_query=%E9%87%91%E6%A6%9C%E9%A2%98%E5%90%8D%E4%B9%8B%E5%90%8E&amp;amp;tab=all&amp;amp;wq=%E9%87%91%E6%A6%9C%E9%A2%98%E5%90%8D%E4%B9%8B%E5%90%8E&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;《金榜题名之后：大学生出路分化之谜》&lt;/a&gt;这个书值得一看，至少给了我很多启发&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;纯懒，慢慢更新&lt;/p&gt;&lt;/blockquote&gt;
-</description>
-        </item>
-        <item>
-        <title>那些歌曲</title>
-        <link>http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/</link>
-        <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/song1-unsplash.jpg" alt="Featured image of post 那些歌曲" /&gt;&lt;h3 id=&#34;这是音乐&#34;&gt;这是音乐
-&lt;/h3&gt;&lt;p&gt;其实也只有自己能懂，那些音乐背后的回忆才是最珍贵的，这东西也不能分享，于是写在此处（暴露乐品）&lt;/p&gt;
-&lt;p&gt;于是这便是一章随机，听到啥想记的，就随手记下来吧，可以也就当作一个音乐封面的记录好了&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday.jpg&#34;
-	width=&#34;600&#34;
-	height=&#34;600&#34;
-	srcset=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday_hu_4e78161dcadaaeca.jpg 480w, http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday_hu_6c38748e59a846dd.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Spring Day&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;100&#34;
-		data-flex-basis=&#34;240px&#34;
-	
-&gt;&lt;br&gt;
-2025-7-6，于假期，考科目三前（最火考过了）&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai.jpg&#34;
-	width=&#34;600&#34;
-	height=&#34;600&#34;
-	srcset=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai_hu_4b8df01701517da8.jpg 480w, http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai_hu_ba0ab12c2089fa51.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;会面菜&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;100&#34;
-		data-flex-basis=&#34;240px&#34;
-	
-&gt;&lt;br&gt;
-2025-7-6，于假期，搭建网站时&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>归档</title>
-        <link>http://localhost:1313/archives/</link>
-        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>关于</title>
-        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>搜索</title>
-        <link>http://localhost:1313/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/search/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>友情链接</title>
-        <link>http://localhost:1313/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</guid>
-        <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
-&lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;links&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.com&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://www.typescriptlang.org&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ts-logo-128.jpg&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;image&lt;/code&gt; field accepts both local and external images.&lt;/p&gt;
-</description>
         </item>
         
     </channel>

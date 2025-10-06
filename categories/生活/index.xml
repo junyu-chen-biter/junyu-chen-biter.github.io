@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>生活 on Marquez</title>
-        <link>https://junyu-chen-biter.github.io/categories/%E7%94%9F%E6%B4%BB/</link>
+        <link>http://localhost:1313/categories/%E7%94%9F%E6%B4%BB/</link>
         <description>Recent content in 生活 on Marquez</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Marquez</copyright>
-        <lastBuildDate>Sun, 06 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://junyu-chen-biter.github.io/categories/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 06 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>那些歌曲</title>
-        <link>https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/</link>
+        <link>http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/</link>
         <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/</guid>
-        <description>&lt;img src="https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/song1-unsplash.jpg" alt="Featured image of post 那些歌曲" /&gt;&lt;h3 id=&#34;这是音乐&#34;&gt;这是音乐
+        <guid>http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/</guid>
+        <description>&lt;img src="http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/song1-unsplash.jpg" alt="Featured image of post 那些歌曲" /&gt;&lt;h3 id=&#34;这是音乐&#34;&gt;这是音乐
 &lt;/h3&gt;&lt;p&gt;其实也只有自己能懂，那些音乐背后的回忆才是最珍贵的，这东西也不能分享，于是写在此处（暴露乐品）&lt;/p&gt;
 &lt;p&gt;于是这便是一章随机，听到啥想记的，就随手记下来吧，可以也就当作一个音乐封面的记录好了&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday.jpg&#34;
 	width=&#34;600&#34;
 	height=&#34;600&#34;
-	srcset=&#34;https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday_hu_4e78161dcadaaeca.jpg 480w, https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday_hu_6c38748e59a846dd.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday_hu_4e78161dcadaaeca.jpg 480w, http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday_hu_6c38748e59a846dd.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Spring Day&#34;
@@ -33,10 +33,10 @@
 &gt;&lt;br&gt;
 2025-7-6，于假期，考科目三前（最火考过了）&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai.jpg&#34;
 	width=&#34;600&#34;
 	height=&#34;600&#34;
-	srcset=&#34;https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai_hu_4b8df01701517da8.jpg 480w, https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai_hu_ba0ab12c2089fa51.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai_hu_4b8df01701517da8.jpg 480w, http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai_hu_ba0ab12c2089fa51.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;会面菜&#34;
