@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>学习 on Marquez</title>
-        <link>http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0/</link>
+        <link>https://junyu-chen-biter.github.io/categories/%E5%AD%A6%E4%B9%A0/</link>
         <description>Recent content in 学习 on Marquez</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Marquez</copyright>
-        <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://junyu-chen-biter.github.io/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>kaggle学习笔记</title>
-        <link>http://localhost:1313/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <link>https://junyu-chen-biter.github.io/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://junyu-chen-biter.github.io/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h1 id=&#34;kaggle入门笔记&#34;&gt;kaggle入门笔记
 &lt;/h1&gt;&lt;h3 id=&#34;下载数据&#34;&gt;下载数据
 &lt;/h3&gt;&lt;p&gt;首先李沐的那个一大推函数不要学，没用，直接在官网上下载数据，命名后再在同一个文件夹下，然后一般使用代码：&lt;/p&gt;
@@ -40,7 +40,7 @@
 &lt;p&gt;二元交叉熵函数，使用的时候必须用sigmoid激活函数，用于二分问题&lt;/p&gt;
 &lt;div style=&#34;height: 25px;&#34;&gt;&lt;/div&gt;
 &lt;blockquote&gt;
-&lt;p&gt;nn.nn.CrossEntropyLoss()&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;nn.CrossEntropyLoss()&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;交叉熵函数，用于多分类问题&lt;/p&gt;
 &lt;h2 id=&#34;以李沐的房价为例的分析&#34;&gt;以李沐的房价为例的分析
 &lt;/h2&gt;&lt;p&gt;首先明确几个点，这些问题是因为这个代码的特殊性而没有遇到的&lt;/p&gt;
@@ -48,8 +48,8 @@
 &lt;p&gt;房价预测是一个回归问题，回归问题套用这个模板是没啥问题的&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;李沐的模型中没有引用dropout等模块，所以测试时没有开启评估模式和禁止梯度&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;数据处理&lt;/strong&gt;
-train数据是一个由字符类型和数值类型两种量的数据，每一行代表和一个数据&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;数据处理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;train数据是一个由字符类型和数值类型两种量的数据，每一行代表和一个数据&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;先pd.read_csv(path),一般train和test都要read出来&lt;/li&gt;
 &lt;li&gt;然后concat函数，合并test与train，这个时候选择性的去除一些无关变量&lt;/li&gt;
@@ -115,8 +115,8 @@ train数据是一个由字符类型和数值类型两种量的数据，每一行
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;定义一些工具&lt;/strong&gt;
-经典的就是李沐的在评估预测效果时，使用的是 log_rmse 函数计算的，&lt;strong&gt;题目要求&lt;/strong&gt;，而这个函数就是自己手写的，包装在一个函数里面，&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;定义一些工具&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;经典的就是李沐的在评估预测效果时，使用的是 log_rmse 函数计算的，&lt;strong&gt;题目要求&lt;/strong&gt;，而这个函数就是自己手写的，包装在一个函数里面，&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -137,8 +137,8 @@ train数据是一个由字符类型和数值类型两种量的数据，每一行
 &lt;p&gt;而损失函数，则可以直接由torch内置的库来调用
 &lt;code&gt; loss=nn.MSELoss() &lt;/code&gt;
 当然其实不止这一种损失函数，自己看着用就行&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;开始训练&lt;/strong&gt;
-李沐将train函数写出来之后内置到了k折交叉验证之中，所以对于初学者来说看起来会十分麻烦。
+&lt;p&gt;&lt;strong&gt;开始训练&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;李沐将train函数写出来之后内置到了k折交叉验证之中，所以对于初学者来说看起来会十分麻烦。
 同时他直接用了K折交叉验证，无异于加大了初学者的理解难度
 首先解释&lt;strong&gt;get_k_fold_data&lt;/strong&gt;这个函数&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -382,8 +382,8 @@ train数据是一个由字符类型和数值类型两种量的数据，每一行
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;选择一个优化器&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;optimizer=torch.optim.Adam(net.parameters(),lr=learning_rate,weight_decay=weight_decay)&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;建立for循环训练&lt;/strong&gt;
-其实如何更新参数的具体过程，已经内置在了torch里面，这里其实是看不见的
+&lt;p&gt;&lt;strong&gt;建立for循环训练&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;其实如何更新参数的具体过程，已经内置在了torch里面，这里其实是看不见的
 X是特征，y是标签&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre&gt;&lt;code&gt;for epoch in range(num_epochs):
@@ -399,10 +399,10 @@ X是特征，y是标签&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;此函数最后放回的是训练集和测试集的均方根误差，用于衡量这个效果
 同时net也训练好了，优化器自动做好了这些事情&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;k_fold函数&lt;/strong&gt;
-解释了上面两个函数之后，k_fold函数就不难了，返回的是k次验证的平均损失值，这里不再讲解&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;train_and_pred函数&lt;/strong&gt;
-简称来说，这一步就是在之前已经完成了net的训练之后，再一次传入test_data，然后回放回相应的标签
+&lt;p&gt;&lt;strong&gt;k_fold函数&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;解释了上面两个函数之后，k_fold函数就不难了，返回的是k次验证的平均损失值，这里不再讲解&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;train_and_pred函数&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;简称来说，这一步就是在之前已经完成了net的训练之后，再一次传入test_data，然后回放回相应的标签
 但是要注意，这里这个方法是预测出的价值，只用于回归问题，不可以用于分类问题
 &lt;code&gt; preds = net(test_features).detach().numpy() &lt;/code&gt;
 这里detch方法和numpy都直接计吧

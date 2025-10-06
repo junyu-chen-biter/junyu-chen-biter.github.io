@@ -2,17 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Marquez</title>
-        <link>http://localhost:1313/</link>
+        <link>https://junyu-chen-biter.github.io/</link>
         <description>Recent content on Marquez</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Marquez</copyright>
-        <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://junyu-chen-biter.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>2025总结</title>
+        <link>https://junyu-chen-biter.github.io/p/2025%E6%80%BB%E7%BB%93/</link>
+        <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://junyu-chen-biter.github.io/p/2025%E6%80%BB%E7%BB%93/</guid>
+        <description>&lt;img src="https://junyu-chen-biter.github.io/p/2025%E6%80%BB%E7%BB%93/memories.jpg" alt="Featured image of post 2025总结" /&gt;</description>
+        </item>
+        <item>
         <title>kaggle学习笔记</title>
-        <link>http://localhost:1313/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <link>https://junyu-chen-biter.github.io/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://junyu-chen-biter.github.io/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h1 id=&#34;kaggle入门笔记&#34;&gt;kaggle入门笔记
 &lt;/h1&gt;&lt;h3 id=&#34;下载数据&#34;&gt;下载数据
 &lt;/h3&gt;&lt;p&gt;首先李沐的那个一大推函数不要学，没用，直接在官网上下载数据，命名后再在同一个文件夹下，然后一般使用代码：&lt;/p&gt;
@@ -425,10 +433,10 @@ X是特征，y是标签&lt;/p&gt;
         </item>
         <item>
         <title>网站搭建说明</title>
-        <link>http://localhost:1313/p/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</link>
+        <link>https://junyu-chen-biter.github.io/p/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</link>
         <pubDate>Sun, 06 Jul 2025 16:14:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</guid>
+        <guid>https://junyu-chen-biter.github.io/p/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</guid>
         <description>&lt;h3 id=&#34;关于yaml的配置&#34;&gt;关于yaml的配置
 &lt;/h3&gt;&lt;p&gt;这个文件可以修改网站的一些配置&lt;/p&gt;
 &lt;blockquote&gt;
@@ -481,11 +489,11 @@ git push origin master&lt;/p&gt;&lt;/blockquote&gt;
         </item>
         <item>
         <title>京西南大一小记</title>
-        <link>http://localhost:1313/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/</link>
+        <link>https://junyu-chen-biter.github.io/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/farm.jpeg" alt="Featured image of post 京西南大一小记" /&gt;&lt;h1 id=&#34;京西南-大一小记&#34;&gt;京西南 大一小记
+        <guid>https://junyu-chen-biter.github.io/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/</guid>
+        <description>&lt;img src="https://junyu-chen-biter.github.io/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/farm.jpeg" alt="Featured image of post 京西南大一小记" /&gt;&lt;h1 id=&#34;京西南-大一小记&#34;&gt;京西南 大一小记
 &lt;/h1&gt;&lt;p&gt;时间真是太快了，没想到短短一年的时间，大一就结束了，最后取得成绩还行，写此文的时候第二学期的成绩还没出来，所以在第一学期综测rank5%，纯成绩rank10%，第二学期纯纯被淑芬被刺，总rank没出来，但是应该不如上学期（），在这里写一些我踩过的坑，供后人参考，当然其中也有我不切实际的幻想，唉唉等未来再看吧&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;题目名意为：北京西南边的良乡大一小记&lt;/p&gt;&lt;/blockquote&gt;
@@ -515,6 +523,15 @@ git push origin master&lt;/p&gt;&lt;/blockquote&gt;
 &lt;/h3&gt;&lt;p&gt;队友大于一切，本人幸运地遇见大佬队友，最后97分拿下此课，没啥技巧，祈祷自己遇见好的队友吧。哦哦，这个课程很锻炼ai使用能力，如果愿意深入了解，其实是一个很好的增强自己实践能力的契机，也是一个很好的偏自动化控制算法的入门，态度好是真能学到东西&lt;/p&gt;
 &lt;h3 id=&#34;大学物理实验&#34;&gt;大学物理实验
 &lt;/h3&gt;&lt;p&gt;难评价，给分有点看运气，想要高分，尽量确保自己绪论部分拿满，那是真的自己可以改变的部分&lt;/p&gt;
+&lt;h3 id=&#34;总结&#34;&gt;总结
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;数学类&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;数学分析+线性代数=16学分&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思政类&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;习概+史纲+思政+国安+行测=10.5学分&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;物理类&lt;/strong&gt;
+大物1=4学分&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;大学新内容&lt;/strong&gt;
+C语言+机械制图+智能机电+&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;课外事物&#34;&gt;课外事物
 &lt;/h2&gt;&lt;h3 id=&#34;大创&#34;&gt;大创
@@ -538,18 +555,18 @@ rm，rc无，我就没参加这些队伍，乐。&lt;/p&gt;
         </item>
         <item>
         <title>那些歌曲</title>
-        <link>http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/</link>
+        <link>https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/</link>
         <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/song1-unsplash.jpg" alt="Featured image of post 那些歌曲" /&gt;&lt;h3 id=&#34;这是音乐&#34;&gt;这是音乐
+        <guid>https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/</guid>
+        <description>&lt;img src="https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/song1-unsplash.jpg" alt="Featured image of post 那些歌曲" /&gt;&lt;h3 id=&#34;这是音乐&#34;&gt;这是音乐
 &lt;/h3&gt;&lt;p&gt;其实也只有自己能懂，那些音乐背后的回忆才是最珍贵的，这东西也不能分享，于是写在此处（暴露乐品）&lt;/p&gt;
 &lt;p&gt;于是这便是一章随机，听到啥想记的，就随手记下来吧，可以也就当作一个音乐封面的记录好了&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday.jpg&#34;
 	width=&#34;600&#34;
 	height=&#34;600&#34;
-	srcset=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday_hu_4e78161dcadaaeca.jpg 480w, http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday_hu_6c38748e59a846dd.jpg 1024w&#34;
+	srcset=&#34;https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday_hu_4e78161dcadaaeca.jpg 480w, https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/springday_hu_6c38748e59a846dd.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Spring Day&#34;
@@ -562,10 +579,10 @@ rm，rc无，我就没参加这些队伍，乐。&lt;/p&gt;
 &gt;&lt;br&gt;
 2025-7-6，于假期，考科目三前（最火考过了）&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai.jpg&#34;
 	width=&#34;600&#34;
 	height=&#34;600&#34;
-	srcset=&#34;http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai_hu_4b8df01701517da8.jpg 480w, http://localhost:1313/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai_hu_ba0ab12c2089fa51.jpg 1024w&#34;
+	srcset=&#34;https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai_hu_4b8df01701517da8.jpg 480w, https://junyu-chen-biter.github.io/p/%E9%82%A3%E4%BA%9B%E6%AD%8C%E6%9B%B2/huimiancai_hu_ba0ab12c2089fa51.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;会面菜&#34;
@@ -581,35 +598,35 @@ rm，rc无，我就没参加这些队伍，乐。&lt;/p&gt;
         </item>
         <item>
         <title>归档</title>
-        <link>http://localhost:1313/archives/</link>
+        <link>https://junyu-chen-biter.github.io/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/archives/</guid>
+        <guid>https://junyu-chen-biter.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>关于</title>
-        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://junyu-chen-biter.github.io/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>https://junyu-chen-biter.github.io/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>搜索</title>
-        <link>http://localhost:1313/search/</link>
+        <link>https://junyu-chen-biter.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
+        <guid>https://junyu-chen-biter.github.io/search/</guid>
         <description></description>
         </item>
         <item>
         <title>友情链接</title>
-        <link>http://localhost:1313/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</link>
+        <link>https://junyu-chen-biter.github.io/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</guid>
+        <guid>https://junyu-chen-biter.github.io/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</guid>
         <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
 &lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
