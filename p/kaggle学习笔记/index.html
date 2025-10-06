@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="kaggle入门笔记 下载数据 首先李沐的那个一大推函数不要学，没用，直接在官网上下载数据，命名后再在同一个文件夹下，然后一般使用代码：\n1 2 3 4 # 读取训练集数据，路径为 &#34;train.csv&#34; train = pd.read_csv(&#34;train.csv&#34;) # 读取测试集数据，路径为 &#34;test.csv&#34; test = pd.read_csv(&#34;test.csv&#34;) 常见的损失函数简介 nn.MSELoss()\n">
+<title>kaggle学习笔记</title>
+
+<link rel='canonical' href='http://localhost:1313/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
+
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="kaggle学习笔记">
+<meta property='og:description' content="kaggle入门笔记 下载数据 首先李沐的那个一大推函数不要学，没用，直接在官网上下载数据，命名后再在同一个文件夹下，然后一般使用代码：\n1 2 3 4 # 读取训练集数据，路径为 &#34;train.csv&#34; train = pd.read_csv(&#34;train.csv&#34;) # 读取测试集数据，路径为 &#34;test.csv&#34; test = pd.read_csv(&#34;test.csv&#34;) 常见的损失函数简介 nn.MSELoss()\n">
+<meta property='og:url' content='http://localhost:1313/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
+<meta property='og:site_name' content='Marquez'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-07-15T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="kaggle学习笔记">
+<meta name="twitter:description" content="kaggle入门笔记 下载数据 首先李沐的那个一大推函数不要学，没用，直接在官网上下载数据，命名后再在同一个文件夹下，然后一般使用代码：\n1 2 3 4 # 读取训练集数据，路径为 &#34;train.csv&#34; train = pd.read_csv(&#34;train.csv&#34;) # 读取测试集数据，路径为 &#34;test.csv&#34; test = pd.read_csv(&#34;test.csv&#34;) 常见的损失函数简介 nn.MSELoss()\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_288f55e55befb29.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Marquez</a></h1>
+            <h2 class="site-description">水到渠成</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/junyu-chen-biter'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.kaggle.com/marquezjun'
+                        target="_blank"
+                        title="Kaggle"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg role="img" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><path d="m 10.412786,12.9295 c -0.011,0.046 -0.0585,0.0705 -0.1405,0.0705 l -1.5694998,0 c -0.0935,0 -0.1755,-0.041 -0.246,-0.124 l -2.589,-3.2945 -0.724,0.687 0,2.5555 c 0,0.1175 -0.0585,0.176 -0.1755,0.176 l -1.2155,0 c -0.118,0 -0.177,-0.0585 -0.177,-0.176 l 0,-11.6475 c 0,-0.1165 0.059,-0.1765 0.177,-0.1765 l 1.2155,0 c 0.117,0 0.1755,0.06 0.1755,0.1765 l 0,7.1715 3.1015,-3.136 c 0.0825,-0.0825 0.165,-0.123 0.2475,-0.123 l 1.6194998,0 c 0.072,0 0.118,0.03 0.1425,0.09 0.023,0.0745 0.017,0.1275 -0.018,0.1575 l -3.2774998,3.172 3.4179998,4.2535 c 0.0475,0.052 0.0585,0.104 0.035,0.179"/></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/" selected>中文</option>
+                                
+                                    <option value="http://localhost:1313/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#下载数据">下载数据</a></li>
+      </ol>
+    </li>
+    <li><a href="#常见的损失函数简介">常见的损失函数简介</a></li>
+    <li><a href="#以李沐的房价为例的分析">以李沐的房价为例的分析</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/" >
+                学习
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/kaggle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">kaggle学习笔记</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-07-15</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="kaggle入门笔记">kaggle入门笔记
+</h1><h3 id="下载数据">下载数据
+</h3><p>首先李沐的那个一大推函数不要学，没用，直接在官网上下载数据，命名后再在同一个文件夹下，然后一般使用代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 读取训练集数据，路径为 &#34;train.csv&#34;
+</span></span><span class="line"><span class="cl">train = pd.read_csv(&#34;train.csv&#34;)
+</span></span><span class="line"><span class="cl"># 读取测试集数据，路径为 &#34;test.csv&#34;
+</span></span><span class="line"><span class="cl">test = pd.read_csv(&#34;test.csv&#34;)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="常见的损失函数简介">常见的损失函数简介
+</h2><blockquote>
+<p>nn.MSELoss()</p></blockquote>
+<p>均分误差，一般用于回归问题</p>
+<div style="height: 25px;"></div>
+<blockquote>
+<p>nn.BCELoss()</p></blockquote>
+<p>二元交叉熵函数，使用的时候必须用sigmoid激活函数，用于二分问题</p>
+<div style="height: 25px;"></div>
+<blockquote>
+<p>nn.CrossEntropyLoss()</p></blockquote>
+<p>交叉熵函数，用于多分类问题</p>
+<h2 id="以李沐的房价为例的分析">以李沐的房价为例的分析
+</h2><p>首先明确几个点，这些问题是因为这个代码的特殊性而没有遇到的</p>
+<blockquote>
+<p>房价预测是一个回归问题，回归问题套用这个模板是没啥问题的</p></blockquote>
+<blockquote>
+<p>李沐的模型中没有引用dropout等模块，所以测试时没有开启评估模式和禁止梯度</p></blockquote>
+<p><strong>数据处理</strong></p>
+<p>train数据是一个由字符类型和数值类型两种量的数据，每一行代表和一个数据</p>
+<ol>
+<li>先pd.read_csv(path),一般train和test都要read出来</li>
+<li>然后concat函数，合并test与train，这个时候选择性的去除一些无关变量</li>
+<li>对数据进行处理</li>
+</ol>
+<p>面对既有数据又有类型的东西，先是提取了提出数据为数值的列，然后进行了归一化,然后把缺失值填冲为0（根据需求选择怎么填充）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">numeric_features = all_features.dtypes[all_features.dtypes != &#39;object&#39;].index
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">all_features[numeric_features] = all_features[numeric_features].apply(
+</span></span><span class="line"><span class="cl">    lambda x: (x - x.mean()) / (x.std()))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">all_features[numeric_features] = all_features[numeric_features].fillna(0)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后是对非数值数据处理的关键，<strong>转化为热独编码</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">all_features=pd.get_dummies(all_features,dummy_na=True)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>大多数机器学习算法只能处理数值型数据，而不能直接处理分类数据。分类数据（如颜色：红、绿、蓝；城市：北京、上海、广州）没有数值上的大小或顺序关系，如果直接将它们映射为简单的整数（如红 = 1，绿 = 2，蓝 = 3），算法可能会错误地认为这些数值之间存在大小或顺序关系，从而影响模型的性能。
+独热编码将每个分类变量转换为一个二进制向量，每个向量的长度等于该分类变量的不同取值的数量。每个取值对应向量中的一个位置，取值出现时该位置为 1，否则为 0。这样可以避免算法错误地理解分类变量之间的关系。</p></blockquote>
+<p>之后就是将这些数据转化为pytorch张量，这样之后才可以进行训练，因为torch框架用的就是张量，这样才可以自动求导</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#先转化为np的数据
+</span></span><span class="line"><span class="cl">all_features = all_features.astype(np.float32)
+</span></span><span class="line"><span class="cl">#提取这个数据的大小，取行列
+</span></span><span class="line"><span class="cl">n_train=train_data.shape[0]
+</span></span><span class="line"><span class="cl">#.value就是转化为numpy数组，这里涉及到tensor的用法
+</span></span><span class="line"><span class="cl">train_features=torch.tensor(all_features.iloc[:n_train].values,dtype=torch.float32)
+</span></span><span class="line"><span class="cl">test_features=torch.tensor(all_features.iloc[n_train:].values,dtype=torch.float32)
+</span></span><span class="line"><span class="cl">#这里的labels就是目标变量的意思，这里是房价
+</span></span><span class="line"><span class="cl">train_labels=torch.tensor(
+</span></span><span class="line"><span class="cl">    train_data.SalePrice.values.reshape(-1,1),dtype=torch.float32
+</span></span><span class="line"><span class="cl">)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>定义一些工具</strong></p>
+<p>经典的就是李沐的在评估预测效果时，使用的是 log_rmse 函数计算的，<strong>题目要求</strong>，而这个函数就是自己手写的，包装在一个函数里面，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#计算均方根误差
+</span></span><span class="line"><span class="cl">def log_rmse(net,features,labels):
+</span></span><span class="line"><span class="cl">    clipped_preds=torch.clamp(net(features),1,float(&#39;inf&#39;))
+</span></span><span class="line"><span class="cl">    rmse=torch.sqrt(loss(torch.log(clipped_preds),torch.log(labels)))
+</span></span><span class="line"><span class="cl">    return rmse.item() #.item就是转化为真值类型
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>写出这样的工具也是十分的有难度，可以借助ai工具，</p>
+<p>而损失函数，则可以直接由torch内置的库来调用
+<code> loss=nn.MSELoss() </code>
+当然其实不止这一种损失函数，自己看着用就行</p>
+<p><strong>开始训练</strong></p>
+<p>李沐将train函数写出来之后内置到了k折交叉验证之中，所以对于初学者来说看起来会十分麻烦。
+同时他直接用了K折交叉验证，无异于加大了初学者的理解难度
+首先解释<strong>get_k_fold_data</strong>这个函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">def get_k_fold_data(k, i, X, y):
+</span></span><span class="line"><span class="cl">    # 这行代码使用了断言（assert）技术。
+</span></span><span class="line"><span class="cl">    # 断言是一种调试工具，用于确保某个条件为真。
+</span></span><span class="line"><span class="cl">    # 如果 k 不大于 1，程序会抛出 AssertionError 异常并终止。
+</span></span><span class="line"><span class="cl">    # 因为 k 折交叉验证要求至少将数据分为两部分，所以 k 必须大于 1。
+</span></span><span class="line"><span class="cl">    assert k &gt; 1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 这行代码计算每一折的样本数量。
+</span></span><span class="line"><span class="cl">    # X.shape[0] 表示特征矩阵 X 的行数，即样本的总数。
+</span></span><span class="line"><span class="cl">    # 使用整除运算符 // 确保结果为整数，得到每一折大致相等的样本数量。
+</span></span><span class="line"><span class="cl">    fold_size = X.shape[0] // k
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 初始化训练集的特征和标签为 None。
+</span></span><span class="line"><span class="cl">    # 在后续循环中，我们会逐步构建训练集。
+</span></span><span class="line"><span class="cl">    X_train, y_train = None, None
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 这是一个 for 循环，用于遍历 k 个折。
+</span></span><span class="line"><span class="cl">    # j 是循环变量，从 0 到 k - 1 依次取值。
+</span></span><span class="line"><span class="cl">    for j in range(k):
+</span></span><span class="line"><span class="cl">        # 这行代码创建了一个切片对象 idx。
+</span></span><span class="line"><span class="cl">        # slice 函数用于生成一个切片对象
+</span></span><span class="line"><span class="cl">        # 它指定了从 j * fold_size 到 (j + 1) * fold_size 的索引范围。
+</span></span><span class="line"><span class="cl">        # 这个索引范围对应了第 j 折的数据在整个数据集中的位置。
+</span></span><span class="line"><span class="cl">        idx = slice(j * fold_size, (j + 1) * fold_size)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        # 这行代码根据切片对象 idx 从特征矩阵 X 和标签向量 y 中提取第 j 折的数据。
+</span></span><span class="line"><span class="cl">        # X[idx, :] 表示提取特征矩阵 X 中索引范围为 idx 的所有行，所有列的数据。
+</span></span><span class="line"><span class="cl">        # y[idx] 表示提取标签向量 y 中索引范围为 idx 的数据。
+</span></span><span class="line"><span class="cl">        X_part, y_part = X[idx, :], y[idx]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        # 这是一个条件判断语句。
+</span></span><span class="line"><span class="cl">        # 如果当前折的索引 j 等于指定的验证折索引 i，说明这一折将作为验证集。
+</span></span><span class="line"><span class="cl">        if j == i:
+</span></span><span class="line"><span class="cl">            # 将第 j 折的数据作为验证集的特征和标签。
+</span></span><span class="line"><span class="cl">            X_valid, y_valid = X_part, y_part
+</span></span><span class="line"><span class="cl">        # 如果训练集还未初始化（即 X_train 为 None），说明这是第一次添加数据到训练集。
+</span></span><span class="line"><span class="cl">        elif X_train is None:
+</span></span><span class="line"><span class="cl">            # 将第 j 折的数据作为训练集的特征和标签。
+</span></span><span class="line"><span class="cl">            X_train, y_train = X_part, y_part
+</span></span><span class="line"><span class="cl">        # 否则，说明训练集已经有部分数据，需要将当前折的数据添加到已有的训练集中。
+</span></span><span class="line"><span class="cl">        else:
+</span></span><span class="line"><span class="cl">            # 这行代码使用了 torch.cat 函数，它用于将多个张量沿着指定的维度拼接在一起。
+</span></span><span class="line"><span class="cl">            # [X_train, X_part] 是要拼接的张量列表，0 表示沿着第 0 维（样本维度）进行拼接。
+</span></span><span class="line"><span class="cl">            # 这样就将当前折的特征数据添加到了训练集的特征数据中。
+</span></span><span class="line"><span class="cl">            X_train = torch.cat([X_train, X_part], 0)
+</span></span><span class="line"><span class="cl">            # 同理，将当前折的标签数据添加到了训练集的标签数据中。
+</span></span><span class="line"><span class="cl">            y_train = torch.cat([y_train, y_part], 0)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 最后，返回训练集的特征、训练集的标签、验证集的特征和验证集的标签。
+</span></span><span class="line"><span class="cl">    return X_train, y_train, X_valid, y_valid
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>言简意赅的就是，K折交叉验证是将一个完整的数据分为k批次，然后依次选一个为验证集，其他为训练集（这就是为什么这个方法一定要写for循环），这个函数的的作用，就是提取出了哪些为验证级，哪些为数据集。最后返回训练集的特征、训练集的标签、验证集的特征和验证集的标签。</p>
+<p>然后看看<strong>train函数</strong>，train函数最具有借鉴价值，其中的许多结构都可以照搬不误</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">test_features</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">num_epochs</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">weight_decay</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 初始化两个空列表，用于存储每个训练周期（epoch）结束后的训练损失和测试损失。</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 这些损失值将以对数均方根误差（log RMSE）的形式记录。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_ls</span><span class="p">,</span> <span class="n">test_ls</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 使用 d2l.load_array 函数创建一个训练数据的迭代器 train_iter。</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 该函数将训练特征和训练标签组合成一个数据集，并按照指定的批量大小进行划分。</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 这样，在训练过程中可以按批次加载数据，提高训练效率。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_iter</span> <span class="o">=</span> <span class="n">d2l</span><span class="o">.</span><span class="n">load_array</span><span class="p">((</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 使用 torch.optim.Adam 优化器来更新模型的参数。</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Adam 是一种常用的优化算法，结合了 AdaGrad 和 RMSProp 的优点。</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># net.parameters() 表示要更新的模型参数，lr 是学习率，weight_decay 是权重衰减系数。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">     <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 外层循环，控制训练的轮数，即模型对整个训练数据集进行多少次完整的训练。</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 内层循环，遍历训练数据的每个批次。</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 在每个批次中，从 train_iter 中获取一批特征数据 X 和对应的标签数据 y。</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">train_iter</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 在每次参数更新之前，需要将优化器中的梯度清零。</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 这是因为 PyTorch 会累积梯度，不清零会导致梯度错误地累加。</span>
+</span></span><span class="line"><span class="cl">            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 前向传播：将输入数据 X 传入模型 net 中，得到模型的预测值。</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 然后使用预先定义的损失函数 loss 计算预测值与真实标签 y 之间的损失。</span>
+</span></span><span class="line"><span class="cl">            <span class="n">l</span> <span class="o">=</span> <span class="n">loss</span><span class="p">(</span><span class="n">net</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 反向传播：计算损失函数关于模型参数的梯度。</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 这一步会自动计算并存储每个参数的梯度值。</span>
+</span></span><span class="line"><span class="cl">            <span class="n">l</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 优化器根据计算得到的梯度更新模型的参数。</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 具体的更新规则由优化器的算法决定，这里使用的是 Adam 算法。</span>
+</span></span><span class="line"><span class="cl">            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 在每个训练周期结束后，计算并记录训练集的对数均方根误差（log RMSE）。</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># log_rmse 函数会将模型的预测值进行裁剪，避免出现负数或零，然后计算对数均方根误差。</span>
+</span></span><span class="line"><span class="cl">        <span class="n">train_ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">log_rmse</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 如果提供了测试数据的标签，则计算并记录测试集的对数均方根误差（log RMSE）。</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">test_labels</span> <span class="n">is</span> <span class="ow">not</span> <span class="n">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">test_ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">log_rmse</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">test_features</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 最后返回训练集和测试集（如果有）在每个训练周期结束后的对数均方根误差列表。</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">train_ls</span><span class="p">,</span> <span class="n">test_ls</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对于这个函数，我们总结这样的套路</p>
+<p><strong>train_iter必不可少</strong></p>
+<blockquote>
+<p>train_iter=d2l.load_array((train_features,train_labels),batch_size)
+这一行姑且看作是固定的代码，有了合格datalodar的数据类型，才方便进行进一步的分组训练</p></blockquote>
+<p>但是你以后是肯定不用d2l库的（这就是一个大槽点），所以用pytorch自己的库文件就给这样写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">from</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span> <span class="n">import</span> <span class="n">TensorDataset</span><span class="p">,</span> <span class="n">DataLoader</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 原代码</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># train_iter = d2l.load_array((train_features, train_labels), batch_size)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 替换后</span>
+</span></span><span class="line"><span class="cl"><span class="n">train_dataset</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">train_iter</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="n">True</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>选择一个优化器</strong></p>
+<blockquote>
+<p>optimizer=torch.optim.Adam(net.parameters(),lr=learning_rate,weight_decay=weight_decay)</p></blockquote>
+<p><strong>建立for循环训练</strong></p>
+<p>其实如何更新参数的具体过程，已经内置在了torch里面，这里其实是看不见的
+X是特征，y是标签</p>
+<blockquote>
+<pre><code>for epoch in range(num_epochs):
+</code></pre></blockquote>
+<pre><code>    for X,y in train_iter:
+        optimizer.zero_grad()
+        l=loss(net(X),y)
+        l.backward()
+        optimizer.step()
+    train_ls.append(log_rmse(net,train_features,train_labels))
+    if test_labels is not None:
+        test_ls.append(log_rmse(net,test_features,test_labels))
+</code></pre>
+<p>此函数最后放回的是训练集和测试集的均方根误差，用于衡量这个效果
+同时net也训练好了，优化器自动做好了这些事情</p>
+<p><strong>k_fold函数</strong></p>
+<p>解释了上面两个函数之后，k_fold函数就不难了，返回的是k次验证的平均损失值，这里不再讲解</p>
+<p><strong>train_and_pred函数</strong></p>
+<p>简称来说，这一步就是在之前已经完成了net的训练之后，再一次传入test_data，然后回放回相应的标签
+但是要注意，这里这个方法是预测出的价值，只用于回归问题，不可以用于分类问题
+<code> preds = net(test_features).detach().numpy() </code>
+这里detch方法和numpy都直接计吧
+如果要用分类问题的话，对于二分类，可以用
+<code> preds_bool = preds &gt;= 0.5 </code>
+最后保存成csv文件提交就好了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">test_data[&#39;SalePrice&#39;] = pd.Series(preds.reshape(1, -1)[0])
+</span></span><span class="line"><span class="cl">    submission = pd.concat([test_data[&#39;Id&#39;], test_data[&#39;SalePrice&#39;]], axis=1)
+</span></span><span class="line"><span class="cl">    submission.to_csv(&#39;submission.csv&#39;, index=False)
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Marquez
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.6519a6b574e95d3e3ed15370630c9dda084c5b90ee6de75f0fc6827fe782ed2c.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
