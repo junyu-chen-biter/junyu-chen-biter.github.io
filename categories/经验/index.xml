@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>经验 on Marquez</title>
-        <link>http://localhost:1313/categories/%E7%BB%8F%E9%AA%8C/</link>
+        <link>https://junyu-chen-biter.github.io/categories/%E7%BB%8F%E9%AA%8C/</link>
         <description>Recent content in 经验 on Marquez</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Marquez</copyright>
-        <lastBuildDate>Sun, 06 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%BB%8F%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 06 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://junyu-chen-biter.github.io/categories/%E7%BB%8F%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>京西南大一小记</title>
-        <link>http://localhost:1313/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/</link>
+        <link>https://junyu-chen-biter.github.io/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Sun, 06 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/farm.jpeg" alt="Featured image of post 京西南大一小记" /&gt;&lt;h1 id=&#34;京西南-大一小记&#34;&gt;京西南 大一小记
+        <guid>https://junyu-chen-biter.github.io/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/</guid>
+        <description>&lt;img src="https://junyu-chen-biter.github.io/p/%E4%BA%AC%E8%A5%BF%E5%8D%97%E5%A4%A7%E4%B8%80%E5%B0%8F%E8%AE%B0/farm.jpeg" alt="Featured image of post 京西南大一小记" /&gt;&lt;h1 id=&#34;京西南-大一小记&#34;&gt;京西南 大一小记
 &lt;/h1&gt;&lt;p&gt;时间真是太快了，没想到短短一年的时间，大一就结束了，最后取得成绩还行，写此文的时候第二学期的成绩还没出来，所以在第一学期综测rank5%，纯成绩rank10%，第二学期纯纯被淑芬被刺，总rank没出来，但是应该不如上学期（），在这里写一些我踩过的坑，供后人参考，当然其中也有我不切实际的幻想，唉唉等未来再看吧&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;题目名意为：北京西南边的良乡大一小记&lt;/p&gt;&lt;/blockquote&gt;
@@ -43,6 +43,15 @@
 &lt;/h3&gt;&lt;p&gt;队友大于一切，本人幸运地遇见大佬队友，最后97分拿下此课，没啥技巧，祈祷自己遇见好的队友吧。哦哦，这个课程很锻炼ai使用能力，如果愿意深入了解，其实是一个很好的增强自己实践能力的契机，也是一个很好的偏自动化控制算法的入门，态度好是真能学到东西&lt;/p&gt;
 &lt;h3 id=&#34;大学物理实验&#34;&gt;大学物理实验
 &lt;/h3&gt;&lt;p&gt;难评价，给分有点看运气，想要高分，尽量确保自己绪论部分拿满，那是真的自己可以改变的部分&lt;/p&gt;
+&lt;h3 id=&#34;总结&#34;&gt;总结
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;数学类&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;数学分析+线性代数=16学分&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思政类&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;习概+史纲+思政+国安+行测=10.5学分&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;物理类&lt;/strong&gt;
+大物1=4学分&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;大学新内容&lt;/strong&gt;
+C语言+机械制图+智能机电+&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;课外事物&#34;&gt;课外事物
 &lt;/h2&gt;&lt;h3 id=&#34;大创&#34;&gt;大创
